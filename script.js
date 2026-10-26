@@ -5,16 +5,18 @@ const btn = document.getElementById("btn");
 const output = document.getElementById("output");
 
 function wait(time) {
-	return new promise(resolve => {
-		setTimeout(resolve,ms);
-	});
-	
+    return new Promise(resolve => {
+        setTimeout(resolve, time);
+    });
 }
-async function showMessage() {
-	const message = text.value;
-	const time = Number(delay.value);
 
-	await wait(time);
-	output.textContent = message;
+async function showMessage() {
+    const message = text.value;
+    const time = Number(delay.value);
+
+    await wait(time);
+
+    output.textContent = message;
 }
-btn.addEventListener("click",showMessage);
+
+btn.addEventListener("click", showMessage);
